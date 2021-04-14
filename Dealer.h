@@ -19,5 +19,6 @@ class Dealer
 		void build_game_deck();
 		void print_deck();
 		void shuffle_deck();
+		// add function for how many cards are left in the game
 };
 

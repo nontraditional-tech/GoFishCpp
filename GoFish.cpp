@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Dealer.h"
 #include "Card.h"
+#include "Player.h"
 
 int main()
 {

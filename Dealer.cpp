@@ -33,3 +33,6 @@ void Dealer::shuffle_deck() {
 	std::shuffle(std::begin(gameDeck), std::end(gameDeck), rng);
 }
 
+// add function for how many cards are left in the game
+
+
