@@ -6,7 +6,7 @@ class Player
 {
 	public:
 		std::vector<Card> playerHand;
-		std::string playerName;
+		/*std::string playerName;*/
 		const int TWO_PLAYER_CARD_NUM_MAX = 7;
 		const int CARD_NUM_MAX = 5;
 		int isAskingPlayerNumber = 0;
@@ -16,8 +16,14 @@ class Player
 		bool isPlayerTurn = false;
 		bool isGoingAgain = false;
 
+	private:
+		std::string playerName;
+
+
 	public:
 		Player();
+		std::string get_player_name();
+		void set_player_name(std::string name);
 		Player(std::string name);
 
 };

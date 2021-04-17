@@ -5,27 +5,39 @@ GameSetup::GameSetup() {
 	std::cout << "How many players?" << std::endl;
 	std::cin >> playerNum;
 	std::cout << playerNum << " players selected" << std::endl;
-	create_players_vector(playerNum);
-	// functionality for player info to be filled in, 
-	// currently, only playerName will need to be 
-	// entered for each player
+	bool boolTemp = create_players_vector(playerNum);
+	std::cout << boolTemp << std::endl;
+	if (boolTemp) { playersCreated = playerNum; }
+	get_players_name();
 }
 
-// can use this for testing
-void GameSetup::create_players_vector(int playerNum) {
-	// for testing
-	//std::string playerArray[] = { "Larry", "Curly", "Moe" };
+bool GameSetup::create_players_vector(int playerNum) {
 	for (int i = 0; i < playerNum; i++) {
-		// for testing
-		//players.push_back(Player(playerArray[i]));
 		players.push_back(Player());
+	}
+
+	// if num of players == size of players vector, true
+	return (playerNum == players.size());
+}
+
+void GameSetup::get_players_name() {
+	int playerNumTemp = 1;
+	std::string nameTemp;
+	for (std::vector<Player>::iterator it = players.begin();
+		it != players.end(); it++) {
+		std::cout << "Player " << playerNumTemp << " enter your name"
+			<< std::endl;
+		std::cin >> nameTemp;
+		it->set_player_name(nameTemp);
+		playerNumTemp++;
 	}
 }
 
-void GameSetup::print_player_names() {
+void GameSetup::print_players_name() {
 	// look into if "&i" should just be "i"
 	for (auto &i : players) {
-		std::cout << i.playerName << std::endl;
+		//std::cout << i.playerName << std::endl;
+		std::cout << i.get_player_name() << std::endl;
 	}
 }
 

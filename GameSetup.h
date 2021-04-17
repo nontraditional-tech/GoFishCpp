@@ -12,8 +12,9 @@ class GameSetup
 
 	public:
 		GameSetup();
-		void create_players_vector(int playerNum);
-		void print_player_names();
+		bool create_players_vector(int playerNum);
+		void get_players_name();
+		void print_players_name();
 
 };
 

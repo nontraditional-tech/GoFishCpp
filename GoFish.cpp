@@ -9,7 +9,7 @@
 int main()
 {
 	GameSetup gameSetup;
-	gameSetup.print_player_names();
+	gameSetup.print_players_name();
 	Dealer dealer;
 	dealer.build_game_deck();
 	dealer.print_deck();
