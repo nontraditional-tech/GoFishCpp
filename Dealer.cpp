@@ -2,9 +2,7 @@
 #include "Dealer.h"
 
 
-Dealer::Dealer() {
-	std::cout << "Dealer constructor" << std::endl;
-}
+Dealer::Dealer() {}
 
 void Dealer::build_game_deck() {
 	for (int suit_i = 0; suit_i < SUIT_MAX; suit_i++) {

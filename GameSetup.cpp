@@ -4,18 +4,26 @@ GameSetup::GameSetup() {
 	int playerNum;
 	std::cout << "How many players?" << std::endl;
 	std::cin >> playerNum;
-	std::cout << playerNum << " players selected" << std::endl;
-	bool boolTemp = create_players_vector(playerNum);
-	std::cout << boolTemp << std::endl;
-	if (boolTemp) { playersCreated = playerNum; }
-	get_players_name();
+	bool isPlayerNumValid = is_player_num_valid(playerNum);
+	if (isPlayerNumValid) {
+		std::cout << playerNum << " players selected" << std::endl;
+	} else {
+		std::cout << "you entered a bogus player number" << std::endl;
+	}
+	bool vectorMatchesPlayers = create_players_vector(playerNum);
+	// if vector player objects match  playerNum, set playersCreated
+	if (vectorMatchesPlayers) { 
+		playersCreated = playerNum; 
+		get_players_name();
+	} else {
+		std::cout << "vector/player error, exit now" << std::endl;
+	}
 }
 
 bool GameSetup::create_players_vector(int playerNum) {
 	for (int i = 0; i < playerNum; i++) {
 		players.push_back(Player());
 	}
-
 	// if num of players == size of players vector, true
 	return (playerNum == players.size());
 }
@@ -39,6 +47,12 @@ void GameSetup::print_players_name() {
 		//std::cout << i.playerName << std::endl;
 		std::cout << i.get_player_name() << std::endl;
 	}
+}
+
+bool GameSetup::is_player_num_valid(int playerNum) {
+	
+	return ((PLAYER_NUM_MIN <= playerNum) &&
+				(playerNum <= PLAYER_NUM_MAX));
 }
 
 

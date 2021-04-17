@@ -6,7 +6,6 @@ class Player
 {
 	public:
 		std::vector<Card> playerHand;
-		/*std::string playerName;*/
 		const int TWO_PLAYER_CARD_NUM_MAX = 7;
 		const int CARD_NUM_MAX = 5;
 		int isAskingPlayerNumber = 0;
