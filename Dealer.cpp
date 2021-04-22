@@ -13,7 +13,7 @@ void Dealer::build_game_deck() {
 }
 
 void Dealer::print_deck() {
-	std::cout << std::endl << std::endl;
+	std::cout << '\n' << std::endl;
 	for (auto i : gameDeck) {
 		i.print_card();
 		std::cout << '\n';

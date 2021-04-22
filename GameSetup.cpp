@@ -6,7 +6,7 @@ GameSetup::GameSetup() {
 	std::cin >> playerNum;
 	bool isPlayerNumValid = is_player_num_valid(playerNum);
 	if (isPlayerNumValid) {
-		std::cout << playerNum << " players selected" << std::endl;
+		std::cout << playerNum << " players selected" << '\n' << std::endl;
 	} else {
 		std::cout << "you entered a bogus player number" << std::endl;
 	}
@@ -42,10 +42,10 @@ void GameSetup::get_players_name() {
 }
 
 void GameSetup::print_players_name() {
-	// look into if "&i" should just be "i"
+	std::cout << "\nWelcome to Go Fish ";
 	for (auto &i : players) {
-		//std::cout << i.playerName << std::endl;
-		std::cout << i.get_player_name() << std::endl;
+		std::cout << i.get_player_name();
+		if (!(&i == &players.back())) { std::cout << ","; }
 	}
 }
 
@@ -55,6 +55,21 @@ bool GameSetup::is_player_num_valid(int playerNum) {
 				(playerNum <= PLAYER_NUM_MAX));
 }
 
-
-
-
+//void GameSetup::print_table_two_players() {
+//	using namespace std;
+//
+//	cout << "												\n";											
+//	cout << "												\n";
+//	cout << "              -------------		            \n";
+//	cout << "             /             \\                  \n";
+//	cout << "            /               \\                 \n";
+//	cout << "           /                 \\                \n";
+//	cout << "           |                 |                 \n";
+//	cout << "           |                 |                 \n";
+//	cout << "           |                 |                 \n";
+//	cout << "            \\               /                 \n";
+//	cout << "             \\             /                  \n";
+//	cout << "              \\           /                   \n";
+//	cout << "               ------------		            \n";
+//	cout << "                  Dealer					 	\n";
+//}

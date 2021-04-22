@@ -12,13 +12,13 @@ class GameSetup
 	private:
 		int playersCreated;
 
-
 	public:
 		GameSetup();
 		bool create_players_vector(int playerNum);
 		void get_players_name();
 		void print_players_name();
 		bool is_player_num_valid(int playerNum);
+		// void print_table_two_players();
 
 };
 
