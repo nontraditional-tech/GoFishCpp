@@ -6,7 +6,6 @@ Card::Card() {
 }
 
 Card::Card(int _face_j, int _suit_i) {
-
 	switch (_face_j)
 	{
 		case 2:		face = FaceEnum::Two;	break;
@@ -38,7 +37,6 @@ Card::Card(int _face_j, int _suit_i) {
 }
 
 void Card::face_enum_toString() {
-
 	std::string faceArray[] = {"Error", "Error","Two", "Three", "Four",
 							   "Five", "Six", "Seven", "Eight", "Nine", 
 							   "Ten", "Jack", "Queen", "King", "Ace" };
@@ -47,7 +45,6 @@ void Card::face_enum_toString() {
 }
 
 void Card::suit_enum_toString() {
-
 	std::string suitArray[] = {"Diamonds", "Hearts", "Clubs", "Spades"};
 
 	suitStr = suitArray[static_cast<int>(suit)];
